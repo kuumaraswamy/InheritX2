@@ -43,11 +43,11 @@ const AuthForm = () => {
       <h1>Login</h1>
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
-          <label htmlFor='bID'>Your Email</label>
+          <label htmlFor='bID'>branchId</label>
           <input type='number' id='bID' required ref={emailInputRef} placeholder="Branch Id"/>
         </div>
         <div className={classes.control}>
-          <label htmlFor='uName'>Your Password</label>
+          <label htmlFor='uName'>User Name</label>
           <input
             type='text'
             id='uName'
@@ -57,7 +57,7 @@ const AuthForm = () => {
           />
         </div>
         <div className={classes.control}>
-          <label htmlFor='password'>Your Password</label>
+          <label htmlFor='password'>Password</label>
           <input
             type='password'
             id='password'

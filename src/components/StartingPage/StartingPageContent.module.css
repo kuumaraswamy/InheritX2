@@ -21,7 +21,7 @@
 
 .starting label {
   display: block;
-  color: white;
+  color: rgb(21, 20, 20);
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
@@ -35,4 +35,13 @@
   width: 100%;
   text-align: left;
   padding: 0.25rem;
+}
+.starting button{
+  cursor: pointer;
+  font: inherit;
+  color: white;
+  background-color: #9f5ccc;
+  border: 1px solid #9f5ccc;
+  border-radius: 20px;
+  padding: 0.5rem 2.5rem;
 }

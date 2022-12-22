@@ -50,32 +50,41 @@ const StartingPageContent = () => {
   return (
     <section className={classes.starting}>
       <form>
-        <input  type="number"  ref={branchIdRef}/><br/>
+      <label>branchId</label>
+         <input  type="number"  ref={branchIdRef}/><br/>
+         <label>Username</label>
         <input type="text" ref={uNameRef}/><br/>
+        <label>firstName</label>
         <input type="text" ref={firstNameRef}/><br/>
+        <label>MiddleName</label>
         <input type="text" ref ={middleNameRef}/><br/>
+        <label>LastName</label>
         <input type="text" ref ={lastNameRef}/><br/>
+        <label>Position</label>
         <input type="text" ref={positionRef}/><br/>
+        <label>Password</label>
         <input type="password" ref={passwordRef}/><br/>
+     <br/>
         <button onClick ={resetHandler}>Reset</button>
-        <button onClick={submitHandler}>Add</button>
+        
+        <button onClick={submitHandler} >Add</button>
       </form>
       <table style={{border: "1px solid black"}}>
         <tbody>
-        <tr><th>#</th>
-        <th>Branch Id</th>
-        <th>Username</th>
-        <th>Name</th>
-        <th>Positon</th>
-        <th>Action</th></tr>
+        <tr style={{ backgroundColor: '#eee' }}><th style={{ border: '1px solid #ccc', padding: '8px' }}>#</th>
+        <th style={{ border: '1px solid #ccc', padding: '8px' }}>Branch Id</th>
+        <th style={{ border: '1px solid #ccc', padding: '8px' }}s>Username</th>
+        <th style={{ border: '1px solid #ccc', padding: '8px' }}>Name</th>
+        <th style={{ border: '1px solid #ccc', padding: '8px' }}>Positon</th>
+        <th style={{ border: '1px solid #ccc', padding: '8px' }}>Action</th></tr>
         {items.map(item => {
         return  <tr style={{border: '1px solid black'}}>
-            <td>{item.id}</td>
-        <td>{item.branchId}</td>
-        <td>{item.userName}</td>
-        <td>{item.firstName + item.middleName }</td>
-        <td>{item.position}</td>
-        <td><button>REMOVE</button></td>
+        <td style={{ border: '1px solid gray' }}>{item.id}</td>
+        <td style={{ border: '1px solid gray' }}>{item.branchId}</td>
+        <td style={{ border: '1px solid gray' }}>{item.userName}</td>
+        <td style={{ border: '1px solid gray' }}>{item.firstName + item.middleName }</td>
+        <td style={{ border: '1px solid gray' }}>{item.position}</td>
+        <td style={{ border: '1px solid gray' }} ><button onClick={() => dispatch(itemsActions.deleteItem(item.id))}>REMOVE</button></td>
           </tr>
         })}
         </tbody>
